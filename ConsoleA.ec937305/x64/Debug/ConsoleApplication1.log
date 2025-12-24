@@ -1,0 +1,10 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(7,11): error C2131: 表达式的计算结果不是常数
+      C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(7,11):
+      因读取超过生命周期的变量而失败
+      C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(7,11):
+      请参见“a”的用法
+  
+C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(10,17): error C3863: 不可指定数组类型“int [a]”
+C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(13,17): error C3863: 不可指定数组类型“int [a]”
+C:\Users\123\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(16,20): warning C4552: ”<<“: 未使用表达式结果
