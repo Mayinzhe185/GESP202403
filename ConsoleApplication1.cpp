@@ -1,33 +1,23 @@
 ﻿#include <iostream>
 #include <vector>
 using namespace std;
+int coin(int a){
+    int num[4]={1,5,10,20};
+    vector<int> dp(a+1,1e9);
+    dp[0]=0;
+    for(int i=1;i<=a;i++){
+        for(int j=3;j>=0;j--){
+            if(i>=num[j]){
+                dp[i]=min(dp[i],dp[i-num[j]]+1);
+            }
+        }
+    }
+    return dp[a];
+}
 int main()
 {
     int a;
     cin>>a;
-    const int c=a;
-    vector<int> b(c, 0);
-    for(int i=0;i<=c;i++){
-        if(i==0){
-            b[i]=1;
-            continue;
-        }
-        else if(i==1){
-            b[i]=1;
-            continue;
-        }
-        else if(i==2){
-            b[i]=2;
-            continue;
-        }
-        else if(i==3){
-            b[i]=4;
-            continue;
-        }
-        else{
-            b[i]=b[i-1]+b[i-2]+b[i-3];
-        }
-    }
-    cout << b[c] << endl;
+    cout<<coin(a)<<endl;
     return 0;
 }
