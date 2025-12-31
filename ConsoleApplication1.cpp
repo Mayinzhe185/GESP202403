@@ -1,23 +1,24 @@
-﻿#include <iostream>
-#include <vector>
+﻿#include<iostream>
+#include<algorithm>
 using namespace std;
-int coin(int a){
-    int num[4]={1,5,10,20};
-    vector<int> dp(a+1,1e9);
-    dp[0]=0;
-    for(int i=1;i<=a;i++){
-        for(int j=3;j>=0;j--){
-            if(i>=num[j]){
-                dp[i]=min(dp[i],dp[i-num[j]]+1);
-            }
-        }
-    }
-    return dp[a];
-}
 int main()
 {
-    int a;
-    cin>>a;
-    cout<<coin(a)<<endl;
+    int n;
+    cin>>n;
+    int* arr = new int[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int b;
+    cin>>b;
+    for(int i=0;i<b;i++){
+        int t,t1;
+        cin>>t>>t1;
+        sort(arr+t-1,arr+t1);
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    delete[] arr;
     return 0;
 }
