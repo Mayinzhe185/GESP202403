@@ -3,22 +3,33 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n,sum=0;
     cin>>n;
-    int* arr = new int[n];
+    int *arr=new int[n];
+    bool *flag=new bool[n];
+    for(int i=0;i<n;i++){
+        flag[i]=false;
+    }
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    int b;
-    cin>>b;
-    for(int i=0;i<b;i++){
-        int t,t1;
-        cin>>t>>t1;
-        sort(arr+t-1,arr+t1);
+    sort(arr,arr+n);
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<n;j++){
+            if(arr[j]==i&&flag[j]==false){
+                sum++;
+                flag[j]=true;
+                break;
+            }
+            else if(arr[j]>i&&flag[j]==false){
+                sum++;
+                flag[j] = true;
+                break;
+            }
+        }
     }
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+    cout<<sum;
     delete[] arr;
+    delete[] flag;
     return 0;
 }
